@@ -22,7 +22,7 @@
 #include "Game.h"
 #include "SpriteCodex.h"
 
-Game::Game( MainWindow& wnd )
+Game::Game( MainWindow& wnd ) //initialising our members
 	:
 	wnd( wnd ),
 	gfx( wnd ),

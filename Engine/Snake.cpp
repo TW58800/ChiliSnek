@@ -1,7 +1,7 @@
 #include "Snake.h"
 #include <assert.h>
 
-Snake::Snake( const Location& loc )
+Snake::Snake( const Location& loc ) //snake constructor
 {
 	constexpr int nBodyColors = 4;
 	constexpr Color bodyColors[nBodyColors] = {		
@@ -13,10 +13,10 @@ Snake::Snake( const Location& loc )
 		
 	for( int i = 0; i < nSegmentsMax; ++i )
 	{
-		segments[i].InitBody( bodyColors[i % nBodyColors] );
+		segments[i].InitBody( bodyColors[i % nBodyColors] ); //remainder when 'i' is devidied by nBodyColors
 	}
 
-	segments[0].InitHead( loc );
+	segments[0].InitHead( loc ); //create the head at the location passed to the constructor
 }
 
 void Snake::MoveBy( const Location& delta_loc )
@@ -98,7 +98,7 @@ void Snake::Segment::MoveBy( const Location& delta_loc )
 	loc.Add( delta_loc );
 }
 
-void Snake::Segment::Draw( Board& brd ) const
+void Snake::Segment::Draw( Board& brd ) const //modifies board but does not change snake
 {
 	brd.DrawCell( loc,c );
 }

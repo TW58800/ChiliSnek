@@ -7,8 +7,8 @@ class Board
 {
 public:
 	Board( Graphics& gfx );
-	void DrawCell( const Location& loc,Color c );
-	int GetGridWidth() const;
+	void DrawCell( const Location& loc,Color c ); //pass location by const reference (&) does not alter the reference
+	int GetGridWidth() const; //const = function can only read not change
 	int GetGridHeight() const;
 	bool IsInsideBoard( const Location& loc ) const;
 	void DrawBorder();
@@ -22,5 +22,5 @@ private:
 	static constexpr int borderPadding = 2;
 	static constexpr int x = 70;
 	static constexpr int y = 50;
-	Graphics& gfx;
+	Graphics& gfx; //cache (store a local copy) a reference to the graphics object for convenicence (also for performance, but not in this case)
 };

@@ -1,9 +1,9 @@
 #include "Board.h"
 #include <assert.h>
 
-Board::Board( Graphics& gfx )
+Board::Board(Graphics& gfx) //constructor that initialises the graphics
 	:
-	gfx( gfx )
+	gfx(gfx) //initialise graphics reference
 {}
 
 void Board::DrawCell( const Location & loc,Color c )

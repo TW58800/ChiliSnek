@@ -20,7 +20,7 @@ private:
 		Color c;
 	};
 public:
-	Snake( const Location& loc );
+	Snake( const Location& loc ); //snake constructor
 	void MoveBy( const Location& delta_loc );
 	Location GetNextHeadLocation( const Location& delta_loc ) const;
 	void GrowAndMoveBy( const Location& delta_loc );
@@ -31,6 +31,6 @@ public:
 private:
 	static constexpr Color headColor = Colors::Yellow;
 	static constexpr int nSegmentsMax = 100;
-	Segment segments[nSegmentsMax];
+	Segment segments[nSegmentsMax]; //have to give the array a size, which cannot be changed once created
 	int nSegments = 1;
 };
