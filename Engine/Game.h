@@ -49,7 +49,7 @@ private:
 	/*  User Variables              */
 	Board brd;
 	Snake snek;
-	Location delta_loc = {1,0};
+	Location delta_loc = {1,0}; //set initially to 1,0
 	std::mt19937 rng;
 	Goal goal;
 	SoundEffect sfxEat = SoundEffect( { L"Sounds\\Eat.wav" } );

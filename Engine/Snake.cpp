@@ -30,7 +30,7 @@ void Snake::MoveBy( const Location& delta_loc )
 
 Location Snake::GetNextHeadLocation( const Location& delta_loc ) const
 {
-	Location l( segments[0].GetLocation() );
+	Location l( segments[0].GetLocation() ); //the copy constructor is another special member automatically created by the compiler
 	l.Add( delta_loc );
 	return l;
 }
@@ -68,7 +68,7 @@ bool Snake::IsInTile( const Location& target ) const
 {
 	for( int i = 0; i < nSegments; ++i )
 	{
-		if( segments[i].GetLocation() == target )
+		if( segments[i].GetLocation() == target ) //the equals operator has been 'overloaded' see Location.h
 		{
 			return true;
 		}

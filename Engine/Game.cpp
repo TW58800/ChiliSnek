@@ -114,7 +114,7 @@ void Game::ComposeFrame()
 {
 	if( gameIsStarted )
 	{
-		snek.Draw( brd );
+		snek.Draw( brd ); //pass it brd
 		goal.Draw( brd );
 		if( gameIsOver )
 		{

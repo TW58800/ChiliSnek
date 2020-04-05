@@ -14,7 +14,7 @@ private:
 		void Follow( const Segment& next );
 		void MoveBy( const Location& delta_loc );
 		void Draw( Board& brd ) const;
-		const Location& GetLocation() const;
+		const Location& GetLocation() const; // returns a reference to the segment location, no need to copy, unlike in GetNextHeadLocation()
 	private:
 		Location loc;
 		Color c;
@@ -22,7 +22,7 @@ private:
 public:
 	Snake( const Location& loc ); //snake constructor
 	void MoveBy( const Location& delta_loc );
-	Location GetNextHeadLocation( const Location& delta_loc ) const;
+	Location GetNextHeadLocation( const Location& delta_loc ) const; //this function must return the Location by value, not by reference
 	void GrowAndMoveBy( const Location& delta_loc );
 	void Draw( Board& brd ) const;
 	bool IsInTileExceptEnd( const Location& target ) const;
